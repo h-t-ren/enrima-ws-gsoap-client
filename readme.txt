@@ -14,3 +14,5 @@
    wsdl2h -o enrima.h -t typemap.dat  http://www.ime.iiasa.ac.at/enrima_ws_tst1/enrima.wsdl  
 6) generate cpp files:
    soapcpp2  -C -i  enrima.h -I ${gsoap_home}/gsoap/import/     
+7) c++ -o enrimaclient main* std* soap*
+8) ./enrimaclient
