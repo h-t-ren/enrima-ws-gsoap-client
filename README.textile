@@ -19,7 +19,7 @@ g++ -o enrima *.cpp (If you got x-net errors, please try: g++ -o enrima *.cpp -l
 
 h2. Notes
 
-You can also generate the source code by youself:
+You can also generate the source code by yourself:
 
 * Download gsoap from http://sourceforge.net/projects/gsoap2/files/gSOAP/, please select gsoap_2.8.3.zip or above
 * Unzip and install gsoap
