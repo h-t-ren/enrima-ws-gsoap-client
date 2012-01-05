@@ -1,11 +1,35 @@
 h1. SMS C++ client
 
-h2. Download this example
+h2. Download the example
 
 * If you installed git:  git clone git//github.com/h-t-ren/enrima-ws-gsoap-client.git
 * If you haven't installed git: go to the webpage https://github.com/h-t-ren/enrima-ws-gsoap-client and click "zip" icon to download the example 
- 
+
+
+h2. Source code explanation
+
+* stdsoap2.h and stdsoap2.cpp:  come form gsoap
+* soapH.h, soapC.cpp, soapStub.h, soapenrimaSoap11Proxy.h and soapenrimaSoap11Proxy.cpp:  genereted by gsoap
+* main.cpp: contains the appliaction (to be written)
+
 h2. Run the example
 
-g++ -o enrima *.cpp -lsocket -lnsl
+g++ -o enrima *.cpp (If you got x-net errors, please try: g++ -o enrima *.cpp -lsocket -lnsl)
 ./enrima
+
+h2. Notes
+
+You can also generate the source code by youself:
+
+* Download gsoap from http://sourceforge.net/projects/gsoap2/files/gSOAP/, please select gsoap_2.8.3.zip or above
+* Unzip and install gsoap
+  ./configure --prefix=$HOME/gsoap
+  make
+  make install
+* Create enrima client test
+  mkdir tst
+  cp gsoap/{typemap.dat,stdsoap2.{h,cpp}} tst
+  # generate enrima.h
+  $HOME/bin/wsdl2h -o enrima.h -t typemap.dat http://www.ime.iiasa.ac.at/enrima_ws_tst1/enrima.wsdl
+  # generate the Client-site *.h & *.cpp files
+  $HOME/bin/soapcpp2 -C -i enrima.h -I $HOME/gsoap/share/gsoap/import/
