@@ -25,6 +25,7 @@ int main() {
 	int returnCode = getModelList(modelListRes);
 	if(returnCode==SOAP_OK)
 	{
+                cout <<"model list:"<<endl;
 		for (unsigned short i = 0; i < modelListRes->model.size(); i++) {
 			ns2__model *model = modelListRes->model.at(i);
 			printModel(model);
@@ -37,6 +38,7 @@ int main() {
 	returnCode = getModel(38, modelRes);
 	if(returnCode==SOAP_OK)
 	{
+                cout <<"get model with id=38"<<endl;
 		printModel(modelRes->model);
 	}
 
@@ -50,6 +52,7 @@ int main() {
 	returnCode = saveModel(req,res);
 	if(returnCode==SOAP_OK)
 	{
+               cout <<"update model with id=38"<<endl;
 		printModel(res->model);
 	}
 
