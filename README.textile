@@ -2,7 +2,7 @@ h1. SMS C++ client
 
 h2. Download the example
 
-* If you installed git:  git clone git//github.com/h-t-ren/enrima-ws-gsoap-client.git
+* If you installed git:  git clone git://github.com/h-t-ren/enrima-ws-gsoap-client.git
 * If you haven't installed git: go to the webpage https://github.com/h-t-ren/enrima-ws-gsoap-client and click "zip" icon to download the example 
 
 
